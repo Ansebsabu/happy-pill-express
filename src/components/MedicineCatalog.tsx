@@ -67,6 +67,15 @@ const medicines: Medicine[] = [
     color: "bg-gradient-to-br from-secondary to-accent-light",
     effect: "Feel unstoppable!",
     price: "₹879"
+  },
+  {
+    id: "7",
+    name: "DOLO",
+    description: "Gentle pain relief in convenient slips",
+    emoji: "🌟",
+    color: "bg-gradient-to-br from-primary to-accent",
+    effect: "Say goodbye to aches and pains!",
+    price: "₹40"
   }
 ];
 
