@@ -18,13 +18,7 @@ const funnyPrescriptions = [
 ];
 
 const doctorNames = [
-  "Dr. Giggles",
-  "Dr. Sunshine",
-  "Dr. Happy Pills",
-  "Dr. Smiley",
-  "Dr. Cheerful",
-  "Dr. Joyful",
-  "Dr. Bubbly"
+  "Dr. Anseb.A"
 ];
 
 export const PrescriberOfTheDay = () => {
