@@ -18,7 +18,7 @@ const funnyPrescriptions = [
 ];
 
 const doctorNames = [
-  "Dr. Anseb.A"
+  "Dr. ANSEB.A"
 ];
 
 export const PrescriberOfTheDay = () => {
