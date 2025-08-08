@@ -21,7 +21,7 @@ const medicines: Medicine[] = [
     emoji: "😊",
     color: "bg-gradient-to-br from-accent-light to-accent",
     effect: "Guaranteed smiles for 24 hours!",
-    price: "$9.99"
+    price: "₹799"
   },
   {
     id: "2",
@@ -30,7 +30,7 @@ const medicines: Medicine[] = [
     emoji: "⚡",
     color: "bg-gradient-to-br from-secondary-light to-secondary",
     effect: "Feel like a superhero!",
-    price: "$12.99"
+    price: "₹1,049"
   },
   {
     id: "3",
@@ -39,7 +39,7 @@ const medicines: Medicine[] = [
     emoji: "🧘‍♀️",
     color: "bg-gradient-to-br from-gentle to-primary-light",
     effect: "Zen mode activated!",
-    price: "$8.99"
+    price: "₹719"
   },
   {
     id: "4",
@@ -48,7 +48,7 @@ const medicines: Medicine[] = [
     emoji: "🐻",
     color: "bg-gradient-to-br from-primary-light to-primary",
     effect: "Uncontrollable giggles!",
-    price: "$7.99"
+    price: "₹639"
   },
   {
     id: "5",
@@ -57,7 +57,7 @@ const medicines: Medicine[] = [
     emoji: "🌙",
     color: "bg-gradient-to-br from-accent to-secondary",
     effect: "Dream of unicorns!",
-    price: "$11.99"
+    price: "₹959"
   },
   {
     id: "6",
@@ -66,7 +66,7 @@ const medicines: Medicine[] = [
     emoji: "💪",
     color: "bg-gradient-to-br from-secondary to-accent-light",
     effect: "Feel unstoppable!",
-    price: "$10.99"
+    price: "₹879"
   }
 ];
 
