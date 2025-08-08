@@ -2,41 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Medical Delivery Design System - Playful & Whimsical 
+All colors MUST be HSL for perfect theming.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Playful Medical Theme Colors */
+    --background: 202 100% 97%;
+    --foreground: 202 95% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 202 95% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 202 95% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Medical Blue - trustworthy yet playful */
+    --primary: 202 83% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 202 100% 75%;
+    --primary-dark: 202 95% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Healing Green - fresh and friendly */
+    --secondary: 158 64% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 158 64% 72%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Warm Orange - energetic and fun */
+    --accent: 25 95% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 25 100% 85%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Soft Pink - gentle and caring */
+    --gentle: 340 82% 80%;
+    --gentle-foreground: 340 82% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 202 23% 94%;
+    --muted-foreground: 202 15% 45%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border: 202 30% 88%;
+    --input: 202 30% 88%;
+    --ring: 202 83% 55%;
+
+    --radius: 1rem;
+
+    /* Fun Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--accent-light)), hsl(var(--gentle)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+
+    /* Shadows for 3D effect */
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.15);
+    --shadow-medicine: 0 8px 30px hsl(var(--secondary) / 0.2);
+    --shadow-bounce: 0 12px 40px hsl(var(--accent) / 0.25);
+
+    /* Animation speeds */
+    --transition-bouncy: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +128,145 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Medical Delivery Animations */
+  @keyframes bounce-medicine {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-10px) scale(1.05); }
+    60% { transform: translateY(-5px) scale(1.02); }
+  }
+
+  @keyframes wiggle {
+    0%, 7% { transform: rotateZ(0); }
+    15% { transform: rotateZ(-15deg); }
+    20% { transform: rotateZ(10deg); }
+    25% { transform: rotateZ(-10deg); }
+    30% { transform: rotateZ(6deg); }
+    35% { transform: rotateZ(-4deg); }
+    40%, 100% { transform: rotateZ(0); }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes delivery-zoom {
+    0% { transform: translateX(-100vw) scale(0.5); }
+    70% { transform: translateX(20px) scale(1.1); }
+    100% { transform: translateX(0) scale(1); }
+  }
+
+  @keyframes confetti-burst {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+    100% { transform: scale(1.5) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes shake-excitement {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+  }
+
+  /* Animation Classes */
+  .bounce-medicine {
+    animation: bounce-medicine 2s ease-in-out infinite;
+  }
+
+  .wiggle-hover:hover {
+    animation: wiggle 0.8s ease-in-out;
+  }
+
+  .float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+
+  .delivery-zoom {
+    animation: delivery-zoom 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .confetti-burst {
+    animation: confetti-burst 0.6s ease-out forwards;
+  }
+
+  .shake-excitement {
+    animation: shake-excitement 0.5s ease-in-out;
+  }
+
+  /* Gradient Utilities */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Shadow Utilities */
+  .shadow-medicine {
+    box-shadow: var(--shadow-medicine);
+  }
+
+  .shadow-bounce {
+    box-shadow: var(--shadow-bounce);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Transition Utilities */
+  .transition-bouncy {
+    transition: var(--transition-bouncy);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* 3D Medicine Bottle */
+  .medicine-3d {
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(-10deg) rotateY(10deg);
+    transition: var(--transition-bouncy);
+  }
+
+  .medicine-3d:hover {
+    transform: perspective(1000px) rotateX(-15deg) rotateY(15deg) scale(1.1);
+  }
+
+  /* Interactive Elements */
+  .draggable {
+    cursor: grab;
+    transition: var(--transition-bouncy);
+  }
+
+  .draggable:active {
+    cursor: grabbing;
+    transform: scale(1.05) rotate(5deg);
+  }
+
+  .prescription-card {
+    background: var(--gradient-card);
+    border: 2px solid hsl(var(--primary-light));
+    transform: var(--transition-bouncy);
+  }
+
+  .prescription-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-bounce);
   }
 }
